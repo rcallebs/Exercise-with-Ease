@@ -6,8 +6,8 @@ const workoutsCtrl = require("../controllers/workouts");
 
 //GET /workouts
 router.get("/", workoutsCtrl.index);
-// //GET /workouts/new define before show route
-// router.get('/new', workoutsCtrl.new)
+// //GET /workouts/new !define before show route!
+router.get('/new', workoutsCtrl.new)
 // //GET /workouts/:id
 // router.get('/', workoutsCtrl.show)
 // POST /todos

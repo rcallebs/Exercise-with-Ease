@@ -7,8 +7,10 @@ const methodOverride = require("method-override");
 
 require('dotenv').config();
 require("./config/database");
-var indexRouter = require("./routes/index");
-var workoutRouter = require("./routes/workouts");
+
+
+const indexRouter = require("./routes/index");
+const workoutRouter = require("./routes/workouts");
 
 var app = express();
 

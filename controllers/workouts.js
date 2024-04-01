@@ -11,7 +11,12 @@ const show = (req, res) => {
     }
 }
 
+function newWorkout(req, res) {
+    res.render('workouts/new', { title: 'Add Exercise', errorMsg: ''});
+}
+
 module.exports = {
     index,
     show,
+    new: newWorkout,
 }
