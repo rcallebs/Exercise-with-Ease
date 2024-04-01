@@ -1,13 +1,19 @@
-const workouts = [
-    {id: 125223, workout: 'Bench', done: true},
-    {id: 127904, workout: 'Squat', done: false},
-    {id: 139608, workout: 'Deadlift', done: false}
-  ];
-	
-  module.exports = {
-    getAll
-  };
-	
-  function getAll() {
-    return workouts;
-  }
+const mongoose = require('mongoose');
+// optional shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema;
+
+const workoutSchema = new mongoose.Schema({
+  exercises: [
+    {
+      type: { type: String, required: true },
+      name: { type: String, required: true },
+      weight: { type: Number, default: 0 },
+      sets: { type: Number, default: 0 },
+      reps: { type: Number, default: 0 },
+      duration: { type: Number, default: 0 },
+      date: { type: Date, default: Date.now }
+    }
+  ]
+});
+
+module.exports = mongoose.model('Workout', workoutSchema);

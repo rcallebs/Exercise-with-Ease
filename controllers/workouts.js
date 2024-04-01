@@ -6,6 +6,13 @@ const index = (req, res) => {
     })
 }
 
+const show = (req, res) => {
+    res.render('workouts/show'), {
+        
+    }
+}
+
 module.exports = {
     index,
+    show,
 }

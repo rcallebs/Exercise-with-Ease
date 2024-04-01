@@ -1,11 +1,18 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-const workoutsCtrl = require('../controllers/workouts')
-
+const workoutsCtrl = require("../controllers/workouts");
 
 // all actual paths start with "/workouts"
 
 //GET /workouts
-router.get('/', workoutsCtrl.index)
+router.get("/", workoutsCtrl.index);
+// //GET /workouts/new define before show route
+// router.get('/new', workoutsCtrl.new)
+// //GET /workouts/:id
+// router.get('/', workoutsCtrl.show)
+// POST /todos
+// router.post('/', workoutsCtrl.create)
+// DELETE /workouts/:id
+// router.delete('/:id', workoutsCtrl.delete)
 
 module.exports = router;
