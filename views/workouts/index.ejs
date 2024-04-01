@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Workouts</title>
-</head>
-<body>
-    <a href="/">Home Page</a>
-    <h1>Exercises</h1>
-    <h3>Exercises as of <%= time %></h3>
-    <ul>
-      <% workouts.forEach(function(e) { %>
-        <li>
-          <%= e.workout %>
-            - 
-          <%= e.done ? 'done' : 'not done' %>
-        </li>
-      <% }); %>
-    </ul>
-  </body>
-</html>
+<%- include('../partials/header') %>
+
+<a href="/">Home Page</a>
+<h1>Workouts</h1>
+<h3>Workouts scheduled as of <%= time %></h3>
+
+<%- include('../partials/footer') %>
