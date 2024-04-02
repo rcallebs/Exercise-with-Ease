@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form id="record-workout" action="/workouts" method="POST">
+<!-- <form id="record-workout" action="/workouts" method="POST">
     <label>Exercise:</label>
         <input type="text" name="name">
     <label>Weight:</label>
@@ -14,6 +14,34 @@
     <label>Date:</label>
         <input type="date" name="dateOfWorkout"> 
         <input type="submit" value="Record Workout">       
+  </form> -->
+
+  <form id="record-workout" action="/workouts" method="POST">
+    <div class="form-group">
+      <label for="exercise-name">Exercise:</label>
+      <input type="text" id="exercise-name" name="name" class="input-field">
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight:</label>
+      <input type="number" id="weight" name="weight" class="input-field">
+    </div>
+    <div class="form-group">
+      <label for="sets">Sets:</label>
+      <input type="number" id="sets" name="sets" class="input-field">
+    </div>
+    <div class="form-group">
+      <label for="reps">Reps:</label>
+      <input type="number" id="reps" name="reps" class="input-field">
+    </div>
+    <div class="form-group">
+      <label for="duration">Duration:</label>
+      <input type="text" id="duration" name="duration" class="input-field">
+    </div>
+    <div class="form-group">
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="dateOfWorkout" class="input-field">
+    </div>
+    <input type="submit" value="Record Workout">       
   </form>
 
 <%- include('../partials/footer') %>

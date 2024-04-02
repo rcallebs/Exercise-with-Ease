@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form id="new-exercise" action="/exercises" method="POST">
+<!-- <form id="new-exercise" action="/exercises" method="POST">
     <label>New Exercise:</label>
     <input type="text" name="name">
     <label>Type:</label>
@@ -20,6 +20,38 @@
       <option value="shoulders">Shoulders</option>
       <option value="core">Core</option>
     </select>
+    <input type="submit" value="Add Exercise"> 
+  </form> -->
+
+  <form id="new-exercise" action="/exercises" method="POST">
+    <div class="form-group">
+      <label for="exercise-name">New Exercise:</label>
+      <input type="text" id="exercise-name" name="name" class="input-field">
+    </div>
+    <div class="form-group">
+      <label for="exercise-type">Type:</label>
+      <select id="exercise-type" name="type" class="input-field">
+        <option value="push">Push</option>
+        <option value="pull">Pull</option>
+        <option value="squat">Squat</option>
+        <option value="hinge">Hinge</option>
+        <option value="cardio">Cardio</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="muscle-target">Target Muscle Group:</label>
+      <select id="muscle-target" name="muscleTarget" class="input-field">
+        <option value="chest">Chest</option>
+        <option value="back">Back</option>
+        <option value="arms">Arms</option>
+        <option value="legs">Legs</option>
+        <option value="shoulders">Shoulders</option>
+        <option value="core">Core</option>
+      </select>
+    </div>
+    <input type="submit" value="Add Exercise"> 
   </form>
+
+
 
 <%- include('../partials/footer') %>
