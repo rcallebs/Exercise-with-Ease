@@ -1,8 +1,7 @@
 const Workout = require('../models/workout.js')
 
 const index = (req, res) => {
-    res.render('workouts/index', {
-    })
+    res.render('workouts/index', { title: 'Workout Schedules'})
 }
 
 const show = (req, res) => {

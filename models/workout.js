@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const workoutSchema = new mongoose.Schema({
-      type: { type: String, required: true },
       name: { type: String, required: true },
       weight: { type: Number, default: 0 },
       sets: { type: Number, default: 0 },

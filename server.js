@@ -10,6 +10,7 @@ require("./config/database");
 
 const indexRouter = require("./routes/index");
 const workoutRouter = require("./routes/workouts");
+const exerciseRouter = require("./routes/exercises")
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use(methodOverride("_method"));
 
 app.use("/", indexRouter);
 app.use("/workouts", workoutRouter);
+app.use("/exercises", exerciseRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
