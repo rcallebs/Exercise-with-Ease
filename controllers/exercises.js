@@ -4,7 +4,7 @@ const index = (req, res) => {
     res.render('exercises/index', { title: 'Excercise List'})
 }
 
-const show = (req, res) => {
+async function show (req, res)  {
     res.render('exercises/show'), {
         
     }

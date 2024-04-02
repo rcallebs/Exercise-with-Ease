@@ -1,9 +1,32 @@
 <%- include('../partials/header') %>
 
-<h1>Recorded Workouts</h1>
-<li>
-    
-</li>
+<h2>Recorded Workouts</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Exercise</th>
+      <th>Weight</th>
+      <th>Sets</th>
+      <th>Reps</th>
+      <th>Duration</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% workouts.forEach(w => { %>
+
+      <tr>
+        <td><%= w.name %></td>
+        <td><%= w.weight %></td>
+        <td><%= w.sets %></td>
+        <td><%= w.reps %></td>
+        <td><%= w.duration %></td>
+        <td><%= w.date %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
 <h3>Logged Workouts as of <%= time %></h3>
 
 <%- include('../partials/footer') %>
