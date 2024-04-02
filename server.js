@@ -5,9 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const methodOverride = require("method-override");
 
-require('dotenv').config();
+require("dotenv").config();
 require("./config/database");
-
 
 const indexRouter = require("./routes/index");
 const workoutRouter = require("./routes/workouts");
@@ -25,7 +24,7 @@ app.use(function (req, res, next) {
   console.log("working");
   // Add a time property to the res.locals object
   // the time property will then be accessible within templates
-  res.locals.time = new Date().toLocaleTimeString();
+  res.locals.time = new Date().toDateString();
   next();
 });
 

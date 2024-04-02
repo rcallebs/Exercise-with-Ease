@@ -1,4 +1,25 @@
 <%- include('../partials/header') %>
 
+<form id="new-form" action="/workouts" method="POST">
+    <label>New Exercise:</label>
+    <input type="text" name="name">
+    <label>Type:</label>
+    <select name="type">
+        <option value="push">Push</option>
+        <option value="pull">Pull</option>
+        <option value="squat">Squat</option>
+        <option value="hinge">Hinge</option>
+        <option value="cardio">Cardio</option>
+    </select>
+    <label>Target Muscle Group</label>
+    <select name="muscleTarget">
+      <option value="chest">Chest</option>
+      <option value="back">Back</option>
+      <option value="arms">Arms</option>
+      <option value="legs">Legs</option>
+      <option value="shoulders">Shoulders</option>
+      <option value="core">Core</option>
+    </select>
+  </form>
 
 <%- include('../partials/footer') %>
