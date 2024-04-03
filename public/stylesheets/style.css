@@ -84,3 +84,24 @@ nav {
   background-color: #fff;
   color: #333;
 }
+
+.home-img {
+  width: 75%; 
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+.home-img img {
+  width: 100%; /* Ensures the image takes up the full width of its container */
+  height: auto; /* Allows the image to scale proportionally */
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+}
+
+.registerMssg {
+  display: flex;
+  justify-content: center;
+}
