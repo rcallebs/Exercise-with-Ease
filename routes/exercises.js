@@ -9,9 +9,9 @@ router.get("/", exerciseCtrl.index);
 // //GET /workouts/new !define before show route!
 router.get('/new', exerciseCtrl.new)
 // //GET /workouts/:id
-// router.get('/', workoutsCtrl.show)
+// router.get('/', exerciseCtrl.show)
 // POST /todos
-// router.post('/', workoutsCtrl.create)
+router.post('/', exerciseCtrl.create)
 // DELETE /workouts/:id
 // router.delete('/:id', workoutsCtrl.delete)
 
