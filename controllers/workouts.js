@@ -2,7 +2,8 @@ const Workout = require("../models/workout.js");
 
 const index = async (req, res) => {
   try {
-    const workouts = await Workout.find({});
+    const workouts = await Workout.find({}).populate('user');
+    // console.log(workouts);
     res.render("workouts/index", {workouts});
   } catch (err) {
     console.log(err);
@@ -18,6 +19,7 @@ function newWorkout(req, res) {
 }
 
 const create = async (req, res) => {
+  req.body.user = req.user;
   try {
     await Workout.create(req.body);
     res.redirect("/workouts",);
