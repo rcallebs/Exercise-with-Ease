@@ -3,7 +3,6 @@ const Exercise = require("../models/exercise.js");
 const index = async (req, res) => {
   try {
     const exercises = await Exercise.find({});
-    console.log(exercises);
     res.render("exercises/index", { exercises });
   } catch (err) {
     console.log(err);

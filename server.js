@@ -26,7 +26,6 @@ app.set("view engine", "ejs");
 // app.use([starts with path], <middleware fn>) [, <middleware fn>])
 
 app.use(function (req, res, next) {
-  console.log("working");
   // Add a time property to the res.locals object
   // the time property will then be accessible within templates
   res.locals.time = new Date().toDateString();

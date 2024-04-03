@@ -20,6 +20,7 @@ const workoutSchema = new Schema(
       required: true,
     },
     name: { type: String, required: true },
+    exercises: [exerciseSchema],
     weight: { type: Number, 
       min: 0,
     },

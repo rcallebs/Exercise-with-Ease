@@ -4,7 +4,6 @@ const Exercise = require("../models/exercise.js")
 const index = async (req, res) => {
   try {
     const workouts = await Workout.find({}).populate('user');
-    // console.log(workouts);
     res.render("workouts/index", {workouts});
   } catch (err) {
     console.log(err);
@@ -21,8 +20,9 @@ const show = async (req, res) => {
   }
 };
 
-function newWorkout(req, res) {
-  res.render("workouts/new", { title: "Add Exercise", errorMsg: "" });
+ const newWorkout = async (req, res) => {
+  const exercises = await Exercise.find({});
+  res.render("workouts/new", { title: "Add Exercise", errorMsg: "", exercises });
 }
 
 const create = async (req, res) => {
@@ -42,5 +42,4 @@ module.exports = {
     create,
     index,
     show,
-   
 };
