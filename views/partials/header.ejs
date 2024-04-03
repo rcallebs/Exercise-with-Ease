@@ -10,13 +10,14 @@
   <body>
     <nav>
       <a href="/">Home Page</a>
-      <a href="/exercises">Exercises</a>
       <% if (user) { %>
-        <a href="/exercises/new">New Exercise</a>
         <a href="/workouts">Workouts</a>
         <a href="/workouts/new">Log a Workout</a>
+        <a href="/exercises">Exercises</a>
+        <a href="/exercises/new">New Exercise</a>
         <a href="/logout">Log Out</a>
       <% } else { %>
+        <a href="/exercises">Exercises</a>
         <a href="/auth/google" class="login">Log In</a>
       <% } %>
     </nav>

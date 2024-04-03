@@ -27,9 +27,11 @@ const create = async (req, res) => {
   }
 };
 
+
 module.exports = {
     new: newWorkout,
     create,
     index,
     show,
+   
 };
