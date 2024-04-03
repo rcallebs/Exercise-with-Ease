@@ -9,26 +9,16 @@ Date(date).toLocaleString('en-US', { month: '2-digit', day: '2-digit', year:
 <table>
   <thead>
     <tr>
-      <th>Exercise</th>
-      <th>Weight</th>
-      <th>Sets</th>
-      <th>Reps</th>
-      <th>Duration</th>
       <th>Date (MM/DD/YY)</th>
+      <th>Detailed Workout</th>
     </tr>
   </thead>
   <tbody>
     <% workouts.forEach(w => { %>
 
     <tr>
-      <td><%= w.name %></td>
-      <td>
-        <%= w.weight %>
-      </td>
-      <td><%= w.sets %></td>
-      <td><%= w.reps %></td>
-      <td><%= w.duration %></td>
       <td><%= formatDate(w.date) %></td>
+      <td><a href="/workouts/<%= w._id %>">Full Workout Information</a></td>
     </tr>
     <% }) %>
   </tbody>

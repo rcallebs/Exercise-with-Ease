@@ -8,8 +8,6 @@ const exerciseCtrl = require("../controllers/exercises");
 router.get("/", exerciseCtrl.index);
 // //GET /workouts/new !define before show route!
 router.get("/new", exerciseCtrl.new);
-// //GET /workouts/:id
-// router.get('/', exerciseCtrl.show)
 // POST /todos
 router.post("/", exerciseCtrl.create);
 // DELETE /workouts/:id

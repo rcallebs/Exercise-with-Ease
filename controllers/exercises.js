@@ -10,9 +10,6 @@ const index = async (req, res) => {
   }
 };
 
-async function show(req, res) {
-  res.render("exercises/show"), {};
-}
 
 function newExercise(req, res) {
   res.render("exercises/new", { title: "Add Exercise", errorMsg: "" });
@@ -30,7 +27,6 @@ const create = async (req, res) => {
 
 module.exports = {
   index,
-  show,
   new: newExercise,
   create,
 };

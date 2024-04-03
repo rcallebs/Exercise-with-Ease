@@ -1,4 +1,5 @@
 const Workout = require("../models/workout.js");
+const Exercise = require("../models/exercise.js")
 
 const index = async (req, res) => {
   try {
@@ -10,8 +11,14 @@ const index = async (req, res) => {
   }
 };
 
-const show = (req, res) => {
-  res.render("workouts/show"), {};
+const show = async (req, res) => {
+  try {
+    const workout = await Workout.findById(req.params.id);
+    res.render(`workouts/show`, { workout });
+  } catch (err) {
+    console.log(err);
+    res.redirect('workouts/')
+  }
 };
 
 function newWorkout(req, res) {
