@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   name: String,
+  age: Number,
+  weight: Number,
   googleId: {
     type: String,
     required: true,
