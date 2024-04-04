@@ -2,62 +2,56 @@
 
 <form id="record-workout" action="/workouts" method="POST">
   <div class="form-group">
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="dateOfWorkout" class="input-field">
+    <label for="day">Day:</label>
+    <select id="date" name="day" class="input-field">
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
   </div>
-    <div class="form-group">
-      <label for="exercise-name">Exercise:</label>
-      <select id="exercise-name" name="exercises" class="input-field">
-        <% exercises.forEach(exercise => { %>
-          <option value="<%= exercise._id %>"><%= exercise.name %></option>
-        <% }); %>
-      </select>
-    </div>
+  <div class="form-group">
+    <label for="muscleGroup">Target Muscle Group:</label>
+    <select id="muscleGroup" name="muscleGroup" class="input-field">
+      <option value="Chest">Chest</option>
+      <option value="Back">Back</option>
+      <option value="Arms">Arms</option>
+      <option value="Legs">Legs</option>
+      <option value="Shoulders">Shoulders</option>
+      <option value="Core">Core</option>
+    </select>
+  </div>
 
-    <div class="form-group">
-      <label for="weight">Weight:</label>
-      <input type="number" id="weight" name="weight" class="input-field" placeholder="lbs">
-    </div>
-    <div class="form-group">
-      <label for="sets">Sets:</label>
-      <select id="sets" name="sets" class="input-field">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-      </div>
-    <div class="form-group">
-      <label for="reps">Reps:</label>
-      <select id="reps" name="reps" class="input-field">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="duration">Duration:</label>
-      <input type="text" id="duration" name="duration" class="input-field">
-    </div>
-    <input type="submit" value="Record Workout">       
-  </form>
-  <p>
-    <%= errorMsg %>
-  </p>
+
+  <div class="form-group">
+    <label for="intensity">Intensity:</label>
+    <select id="sets" name="sets" class="input-field">
+      <option value="Low">Low</option>
+      <option value="Moderate">Moderate</option>
+      <option value="High">High</option>
+      <option value="Interval">Interval</option>
+      <option value="Endurace">Endurace</option>
+      <option value="Recovery">Recovery</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="time">Time of Day:</label>
+    <select id="time" name="time" class="input-field">
+      <option value="Morning">Morning</option>
+      <option value="Midday">Midday</option>
+      <option value="Afternoon">Afternoon</option>
+      <option value="Night">Night</option>
+    </select>
+  </div>  
+  <div class="form-group">
+    <label for="cardio">Cardio Included:</label>
+    <input type="checkbox" name="cardio" checked>
+  </div>
+  <input type="submit" value="Schedule Workout" />
+</form>
+<p><%= errorMsg %></p>
 
 <%- include('../partials/footer') %>

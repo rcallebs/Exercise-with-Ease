@@ -26,7 +26,7 @@ const show = async (req, res) => {
 }
 
 const create = async (req, res) => {
-  req.body.user = req.user;
+  req.body.cardio = !!req.body.cardio;
   try {
     console.log(req.body);
     await Workout.create(req.body);

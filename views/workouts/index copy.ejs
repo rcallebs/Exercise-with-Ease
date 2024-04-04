@@ -5,24 +5,25 @@
 Date(date).toLocaleString('en-US', { month: '2-digit', day: '2-digit', year:
 '2-digit', hour: '2-digit', minute: '2-digit' }); return formattedDate; } %>
 
-<h2>Workout Schedule</h2>
+<h2>Current Workout Schedule</h2>
 <table>
   <thead>
     <tr>
       <th>Day</th>
-      <th>Muscle Groups</th>
-      <th>Cardio</th>
-      <th>Intensity</th>
-      <th>Time of Day</th>
+      <th>Exercises</th>
     </tr>
   </thead>
   <tbody>
+    <% workouts.forEach(w => { %>
+
     <tr>
-      <td><%= workout.day %></td>
-      <td><%= workout.muscleGroup %></td>
-      <td><%= workout.cardio ? 'Sadly Yes' : 'Not Today'%></td>
-      <td><%= workout.intensity %></td>
-      <td><%= workout.time %></td>
+      <td><%= formatDate(w.date) %></td>
+      <td><a href="/workouts/<%= w._id %>">Full Workout Information</a></td>
     </tr>
+    <% }) %>
   </tbody>
 </table>
+
+<h3>Logged Workouts as of <%= time %></h3>
+
+<%- include('../partials/footer') %>
