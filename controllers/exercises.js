@@ -18,13 +18,17 @@ async function addToWorkout(req, res) {
     res.redirect(`/workouts/${workout._id}`);
   } catch (err) {
     console.log(err);
-    res.render('exercises', { errorMsg: "Not adding exercise to workout"});
+    res.render("exercises", { errorMsg: "Not adding exercise to workout" });
   }
 }
 
 async function newExercise(req, res) {
   const exercises = await Exercise.find({}).sort("type");
-  res.render("exercises/new", { title: "Add Exercise", exercises, errorMsg: "" });
+  res.render("exercises/new", {
+    title: "Add Exercise",
+    exercises,
+    errorMsg: "",
+  });
 }
 
 const create = async (req, res) => {
@@ -39,9 +43,25 @@ const create = async (req, res) => {
   }
 };
 
+async function filterParam(req, res) {
+  // find all exercises
+  const exercises = await Exercise.find({});
+  const banana = req.params.filterParam;
+  const filteredList = exercises.filter((a) => banana === a.muscleTarget);
+  console.log(filteredList);
+  res.render(`exercises/index`, { exercises: filteredList });
+}
+
+async function filtered(req, res) {
+  res.redirect(`/exercises/filter/${req.body.workoutFilter}`);
+  // console.log(req.body);
+}
+
 module.exports = {
   index,
   new: newExercise,
   create,
   addToWorkout,
+  filtered,
+  filterParam,
 };

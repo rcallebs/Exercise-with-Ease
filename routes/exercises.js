@@ -13,4 +13,8 @@ router.post("/", exerciseCtrl.create);
 // DELETE /workouts/:id
 // router.delete('/:id', workoutsCtrl.delete)
 
+router.get('/filter/:filterParam', exerciseCtrl.filterParam);
+
+router.post('/filter', exerciseCtrl.filtered);
+
 module.exports = router;

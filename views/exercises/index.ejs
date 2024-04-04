@@ -1,7 +1,13 @@
 <%- include('../partials/header') %>
 
 <h1>All Currently Listed Exercises</h1>
-
+<form action="/exercises/filter" method="POST">
+  <label name="dropdown"></label>
+  <select name="workoutFilter" id="workoutFilter">
+    <option value="Legs">Legs</option>
+  </select>
+  <button type="submit">Filter</button>
+</form>
 <table class="exerciseList">
   <thead class="excerciseHeaders">
     <tr>
@@ -10,9 +16,9 @@
       <th>Muscle Target</th>
     </tr>
   </thead>
+
   <tbody>
-    
-   <% exercises.forEach(e => { %>
+    <% exercises.forEach(e => { %>
 
     <tr>
       <td><%= e.name %></td>
