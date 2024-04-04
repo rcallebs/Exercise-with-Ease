@@ -1,29 +1,27 @@
 <%- include('../partials/header') %>
 
-
 <h1>All Currently Listed Exercises</h1>
 
 <table class="exerciseList">
-    <thead class="excerciseHeaders">
-      <tr>
-        <th>Exercise Name</th>
-        <th>Type</th>
-        <th>Muscle Target</th>
-      </tr>
-    </thead>
-    <tbody>
+  <thead class="excerciseHeaders">
+    <tr>
+      <th>Exercise Name</th>
+      <th>Type</th>
+      <th>Muscle Target</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+   <% exercises.forEach(e => { %>
 
-      
-      <% exercises.forEach(e => { %>
-  
-      <tr>
-        <td><%= e.name %></td>
-        <td><%= e.type %></td>
-        <td><%= e.muscleTarget %></td>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
+    <tr>
+      <td><%= e.name %></td>
+      <td><%= e.type %></td>
+      <td><%= e.muscleTarget %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
 
 <h3>Registered Users Please Add to the List</h3>
 

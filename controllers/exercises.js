@@ -28,6 +28,8 @@ async function newExercise(req, res) {
 }
 
 const create = async (req, res) => {
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
   try {
     await Exercise.create(req.body);
     res.redirect("/exercises");

@@ -33,9 +33,10 @@ const workoutSchema = new Schema(
     time: { type: String, enum: ["Morning", "Midday", "Afternoon", "Night"] },
     user: {
       type: Schema.Types.ObjectId,
-      ref: "User",
-      required: false
+      ref: 'User',
+      required: true
     },
+    userName: String,
       exercises: [{
         type: Schema.Types.ObjectId,
         ref: 'Exercise'

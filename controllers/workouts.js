@@ -28,6 +28,8 @@ const show = async (req, res) => {
 
 const create = async (req, res) => {
   req.body.cardio = !!req.body.cardio;
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
   try {
     // console.log(req.body);
     const workout = await Workout.create(req.body);
