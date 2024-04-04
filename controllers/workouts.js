@@ -12,11 +12,12 @@ const index = async (req, res) => {
 
 const show = async (req, res) => {
   try {
-    const workout = await Workout.findById(req.params.id);
+    const workout = await Workout.findById(req.params.id).populate('exercises');
+    const exercises = await Exercise.find({ _id: { $nin: workout.exercises } }).sort('name');
     res.render(`workouts/show`, { workout });
   } catch (err) {
     console.log(err);
-    res.redirect('workouts/')
+    res.redirect('/workouts')
   }
 };
 
@@ -28,9 +29,9 @@ const show = async (req, res) => {
 const create = async (req, res) => {
   req.body.cardio = !!req.body.cardio;
   try {
-    console.log(req.body);
-    await Workout.create(req.body);
-    res.redirect("/workouts",);
+    // console.log(req.body);
+    const workout = await Workout.create(req.body);
+    res.redirect(`/workouts/${workout._id}`);
   } catch (err) {
     console.log(err);
     res.render("workouts/new", { errorMsg: err.message });

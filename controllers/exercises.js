@@ -10,15 +10,20 @@ const index = async (req, res) => {
   }
 };
 
-async function addToWorkout (req, res) {
-  const workout = await Workout.findById(req.params.id);
-  workout.exercises.push(req.body.exerciseId);
-  await workout.save();
-
+async function addToWorkout(req, res) {
+  try {
+    const workout = await Workout.findById(req.params.id);
+    workout.exercises.push(req.body.exerciseId);
+    await workout.save();
+    res.redirect(`/workouts/${workout._id}`);
+  } catch (err) {
+    console.log(err);
+    res.render('exercises', { errorMsg: "Not adding exercise to workout"});
+  }
 }
 
 async function newExercise(req, res) {
-  const exercises = await Exercise.find({}).sort('type');
+  const exercises = await Exercise.find({}).sort("type");
   res.render("exercises/new", { title: "Add Exercise", errorMsg: "" });
 }
 
