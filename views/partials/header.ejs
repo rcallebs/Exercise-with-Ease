@@ -4,21 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-   
-    
   </head>
   <body>
     <nav>
       <a href="/">Home Page</a>
       <% if (user) { %>
-        <a href="/workouts">Workouts</a>
-        <a href="/workouts/new">Log a Workout</a>
-        <a href="/exercises">Exercises</a>
-        <a href="/exercises/new">New Exercise</a>
-        <a href="/logout">Log Out</a>
+      <a href="/workouts">Workouts</a>
+      <a href="/workouts/new">Schedule a Workout</a>
+      <a href="/exercises">Exercises</a>
+      <a href="/exercises/new">New Exercise</a>
+      <a href="/logout">Log Out</a>
       <% } else { %>
-        <a href="/exercises">Exercises</a>
-        <a href="/auth/google" class="login">Log In</a>
+      <a href="/exercises">Exercises</a>
+      <a href="/auth/google" class="login">Log In</a>
       <% } %>
     </nav>
   </body>

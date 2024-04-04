@@ -1,4 +1,5 @@
 const Exercise = require("../models/exercise.js");
+const Workout = require("../models/workout.js");
 
 const index = async (req, res) => {
   try {
@@ -9,8 +10,15 @@ const index = async (req, res) => {
   }
 };
 
+async function addToWorkout (req, res) {
+  const workout = await Workout.findById(req.params.id);
+  workout.exercises.push(req.body.exerciseId);
+  await workout.save();
 
-function newExercise(req, res) {
+}
+
+async function newExercise(req, res) {
+  const exercises = await Exercise.find({}).sort('type');
   res.render("exercises/new", { title: "Add Exercise", errorMsg: "" });
 }
 
@@ -28,4 +36,5 @@ module.exports = {
   index,
   new: newExercise,
   create,
+  addToWorkout,
 };
