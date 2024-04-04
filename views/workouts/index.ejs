@@ -10,8 +10,18 @@
       <th>Details</th>
     </tr>
   </thead>
+
+  <%
+  // make the workout schedule display Sun - Monday regardless of when a workout is added
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const sortedWorkouts = workouts
+    .map(w => ({ dayIndex: days.indexOf(w.day), workout: w }))
+    .sort((a, b) => a.dayIndex - b.dayIndex)
+    .map(obj => obj.workout);
+%>
+
   <tbody>
-    <% workouts.forEach(w => { %>
+    <% sortedWorkouts.forEach(w => { %>
 
     <tr>
       <td><%= (w.day) %></td>

@@ -6,7 +6,6 @@
     <tr>
       <th>Day</th>
       <th>Muscle Groups</th>
-      <th>Exercises</th>
       <th>Cardio</th>
       <th>Intensity</th>
       <th>Time</th>
@@ -16,26 +15,22 @@
     <tr>
       <td><%= workout.day %></td>
       <td><%= workout.muscleGroup %></td>
-      <td>  
-        <ul>
-          <%- workout.exercises.map(e => `<li>${e.name}</li>`) %>
-        </ul> 
-      </td>
       <td><%= workout.cardio ? 'Sadly Yes' : 'Not Today'%></td>
       <td><%= workout.intensity %></td>
       <td><%= workout.time %></td>
     </tr>
   </tbody>
 </table>
+
+
 <div>Exercises:</div>
   <ul>
-    <%- workout.exercises.map(e => `<li>${e.name}</li>`) %>
+    <%- workout.exercises.map(e => `<li>${e.name}</li>`).join('') %>
   </ul> 
 
-<%- console.log(workout.exercises, 'please') -%>
 <form id="add-exercise" action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
   <select name="exerciseId">
-    <%- exercises.map(e => `<option value="${e._id}">${e.name}</option>`).join('') %>
+    <%- exercises.map(e => `<option value="${e._id}">${e.name}</option>`)%>
   </select>
   <button type="submit">Add to Workout</button>
 </form>
