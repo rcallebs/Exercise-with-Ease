@@ -33,9 +33,9 @@
   </ul> 
 
 <%- console.log(workout.exercises, 'please') -%>
-<form id="add-exercise" action="/workouts/<%= workout._id %>" method="POST">
+<form id="add-exercise" action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
   <select name="exerciseId">
-    <%- workout.exercises.map(e => `<option value="${e._id}">${e.name}</option>`).join('') %>
+    <%- exercises.map(e => `<option value="${e._id}">${e.name}</option>`).join('') %>
   </select>
   <button type="submit">Add to Workout</button>
 </form>

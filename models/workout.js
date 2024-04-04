@@ -34,7 +34,8 @@ const workoutSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      required: false},
+      required: false
+    },
       exercises: [{
         type: Schema.Types.ObjectId,
         ref: 'Exercise'

@@ -14,7 +14,7 @@ const show = async (req, res) => {
   try {
     const workout = await Workout.findById(req.params.id).populate('exercises');
     const exercises = await Exercise.find({ _id: { $nin: workout.exercises } }).sort('name');
-    res.render(`workouts/show`, { workout });
+    res.render(`workouts/show`, { workout, exercises },);
   } catch (err) {
     console.log(err);
     res.redirect('/workouts')
