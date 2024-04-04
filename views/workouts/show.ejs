@@ -1,5 +1,11 @@
 <%- include('../partials/header') %>
 
+<!-- adjust the date of workout to display mm/dd/yy with 12 hour cycles -->
+<% function formatDate(date) { const formattedDate = new
+  Date(date).toLocaleString('en-US', { month: '2-digit', day: '2-digit', year:
+  '2-digit', hour: '2-digit', minute: '2-digit' }); return formattedDate; } %>
+
+
 <h2>Workout Schedule</h2>
 <table>
   <thead>
