@@ -24,7 +24,7 @@ async function addToWorkout(req, res) {
 
 async function newExercise(req, res) {
   const exercises = await Exercise.find({}).sort("type");
-  res.render("exercises/new", { title: "Add Exercise", errorMsg: "" });
+  res.render("exercises/new", { title: "Add Exercise", exercises, errorMsg: "" });
 }
 
 const create = async (req, res) => {
