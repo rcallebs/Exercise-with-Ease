@@ -24,17 +24,19 @@
 
 
 
-<br><h2>Exercises:</h2>
-  <ul>
-    <%- workout.exercises.map(e => `<li>${e.name}</li>`).join('') %>
-  </ul> 
+<br>
+<div class="WOexercises"><h2>Exercises:</h2>
+    <ul>
+      <%- workout.exercises.map(e => `<li>${e.name}</li>`).join('') %>
+    </ul> 
 
-<form id="add-exercise" action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
-  <select name="exerciseId">
-    <%- exercises.map(e => `<option value="${e._id}">${e.name}</option>`)%>
-  </select>
-  <button type="submit">Add to Workout</button>
-</form>
+  <form id="add-exercise" action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+    <select name="exerciseId">
+      <%- exercises.map(e => `<option value="${e._id}">${e.name}</option>`)%>
+    </select>
+    <button type="submit">Add to Workout</button>
+  </form>
+</div>
 <br>
 <br><h2>Comments</h2>
 
@@ -72,7 +74,7 @@
 <% if (user){ %>
   <form id="add-comment-form" method="POST"
     action="/workouts/<%= workout._id %>/comments">
-    <label>Comments:</label>
+    <label>Comment:</label><br>
     <textarea name="content"></textarea>
     <input type="submit" value="Add Comment">
   </form>

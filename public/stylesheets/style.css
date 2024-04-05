@@ -1,3 +1,7 @@
+* {
+  font-family: "Montserrat";
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -116,7 +120,7 @@ nav {
 
 .formFilter {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .currSchedule {
@@ -128,4 +132,12 @@ nav {
 }
 #workoutFilter {
   margin: 10px;
+}
+
+.newWOMssg {
+  text-align: center;
+}
+
+.exerciseIndex {
+  text-align: center;
 }
