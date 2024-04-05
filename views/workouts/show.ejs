@@ -1,11 +1,5 @@
 <%- include('../partials/header') %>
 
-<!-- adjust the date of workout to display mm/dd/yy with 12 hour cycles -->
-<% function formatDate(date) { const formattedDate = new
-  Date(date).toLocaleString('en-US', { month: '2-digit', day: '2-digit', year:
-  '2-digit', hour: '2-digit', minute: '2-digit' }); return formattedDate; } %>
-
-
 <h2>Workout Schedule</h2>
 <table>
   <thead>
@@ -29,7 +23,8 @@
 </table>
 
 
-<div>Exercises:</div>
+
+<br><h2>Exercises:</h2>
   <ul>
     <%- workout.exercises.map(e => `<li>${e.name}</li>`).join('') %>
   </ul> 
@@ -40,3 +35,42 @@
   </select>
   <button type="submit">Add to Workout</button>
 </form>
+<br>
+<br><h2>Comments</h2>
+
+<% if (workout.comments.length) { %>
+<table>
+  <thread>
+    <tr>
+      <th>User</th>
+      <th>Comment Left on</th>
+      <th>Comment</th>
+      <th></th>
+    </tr>
+  </thread>
+  <tbody>
+    <% workout.comments.forEach(function(c) { %>
+      <tr>
+        <td class="commenter"> <%= c.userName %></td>
+        <td> <%= c.createdAt.toLocaleString() %></td>
+        <td> <%= c.content %> </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+<% } else { %>
+  <h4>Be the first to comment on this workout</h4>
+<% } %>
+
+
+<br><br>
+<% if (user){ %>
+  <form id="add-comment-form" method="POST"
+    action="/workouts/<%= workout._id %>/comments">
+    <label>Comments:</label>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Add Comment">
+  </form>
+<% } %>
+
+<%- include('../partials/footer') %>

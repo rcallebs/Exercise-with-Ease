@@ -47,17 +47,25 @@ async function filterParam(req, res) {
   // find all exercises stored in mongoDB
   const exercises = await Exercise.find({});
   //hold the value of the parameter of the request
-  const banana = req.params.filterParam;
-  // return exercises that have a match between param and muscleTarget object 
-  const filteredList = exercises.filter((a) => banana === a.muscleTarget);
+  const searchBy = req.params.filterParam;
+  // return exercises that have a match between param and muscleTarget object
+  const filteredList = exercises.filter((a) => searchBy === a.muscleTarget);
   //render new page of only those exercises filtered for
   res.render(`exercises/index`, { exercises: filteredList });
 }
 
 async function filtered(req, res) {
   res.redirect(`/exercises/filter/${req.body.workoutFilter}`);
-  // console.log(req.body);
 }
+
+// async function deleteExercise(req, res) {
+//   const workout = await Workout.findOne({ 'exercises._id': req.params.id, 'exercises.user': req.user.id });
+//   if (!workout) return res.redirect('/');
+//   workout.exercises.remove(req.params.id);
+//   await exercise.save()
+//   res.redirect(`/workouts/${workout._id}`);
+  
+// }
 
 module.exports = {
   index,
@@ -66,4 +74,5 @@ module.exports = {
   addToWorkout,
   filtered,
   filterParam,
+  // delete: deleteExercise,
 };

@@ -11,10 +11,10 @@ router.get("/new", exerciseCtrl.new);
 // POST /todos
 router.post("/", exerciseCtrl.create);
 // DELETE /workouts/:id
-// router.delete('/:id', workoutsCtrl.delete)
-
+// router.delete('/:id', exerciseCtrl.delete)
+//GET /filter/:filterParam
 router.get('/filter/:filterParam', exerciseCtrl.filterParam);
-
+//POST /filter
 router.post('/filter', exerciseCtrl.filtered);
 
 module.exports = router;

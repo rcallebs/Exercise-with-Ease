@@ -2,11 +2,15 @@ const mongoose = require("mongoose");
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-const exerciseSchema = new Schema(
+
+const commentSchema = new Schema(
   {
-    name: { type: String, required: true },
-    type: { type: String, required: true },
-    muscleTarget: { type: String, required: true },
+    content: { type: String, required: true },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
   },
   {
     timestamps: true,
@@ -41,6 +45,7 @@ const workoutSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'Exercise'
       }],
+    comments: [commentSchema],
     },
   {
     timestamps: true,
