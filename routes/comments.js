@@ -7,6 +7,6 @@ const commentRouter = require('../controllers/comments');
 // POST /workouts/:id/reviews (create review for a movie)
 router.post('/workouts/:id/comments', commentRouter.create);
 //DELETE /reviews
-router.delete('/reviews/:id', commentRouter.delete);
+router.delete('/comments/:id', commentRouter.delete);
 
 module.exports = router;

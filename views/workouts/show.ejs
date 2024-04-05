@@ -42,18 +42,23 @@
 <table>
   <thread>
     <tr>
-      <th>User</th>
       <th>Comment Left on</th>
       <th>Comment</th>
-      <th></th>
+      <th>Delete Comment</th>
     </tr>
   </thread>
   <tbody>
     <% workout.comments.forEach(function(c) { %>
       <tr>
-        <td class="commenter"> <%= c.userName %></td>
         <td> <%= c.createdAt.toLocaleString() %></td>
         <td> <%= c.content %> </td>
+        <td>
+          <% if (user?._id.equals(c.user)) { %>
+            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+          <% } %>
+        </td>
       </tr>
     <% }) %>
   </tbody>

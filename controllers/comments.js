@@ -14,7 +14,7 @@ async function create(req, res) {
   res.redirect(`/workouts/${workout._id}`);
 }
 
-async function deleteReview(req, res) {
+async function deleteComment(req, res) {
     const workout = await Workout.findOne({
       "comments._id": req.params.id,
       "comments.user": req.user._id,
@@ -27,5 +27,5 @@ async function deleteReview(req, res) {
 
 module.exports = {
   create,
-  delete: deleteReview,
+  delete: deleteComment,
 };
