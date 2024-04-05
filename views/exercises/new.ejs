@@ -1,34 +1,36 @@
 <%- include('../partials/header') %>
 
-<h2 class="AddExercise">Add an Exercise</h2>
-  <form id="new-exercise" action="/exercises" method="POST">
-    <div class="form-group">
-      <label for="exercise-name">New Exercise:</label>
-      <input type="text" id="exercise-name" name="name" class="input-field">
-    </div>
-    <div class="form-group">
-      <label for="exercise-type">Type:</label>
-      <select id="exercise-type" name="type" class="input-field">
-        <option value="Push">Push</option>
-        <option value="Pull">Pull</option>
-        <option value="Squat">Squat</option>
-        <option value="Hinge">Hinge</option>
-        <option value="Cardio">Cardio</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="muscle-target">Target Muscle Group:</label>
-      <select id="muscle-target" name="muscleTarget" class="input-field">
-        <option value="Chest">Chest</option>
-        <option value="Back">Back</option>
-        <option value="Arms">Arms</option>
-        <option value="Legs">Legs</option>
-        <option value="Shoulders">Shoulders</option>
-        <option value="Core">Core</option>
-      </select>
-    </div>
-    <input type="submit" value="Add Exercise"> 
-  </form>
+
+  <h2 class="AddExercise">Add an Exercise</h2>
+    <form id="new-exercise" action="/exercises" method="POST">
+      <div class="form-group">
+        <label for="exercise-name">New Exercise:</label>
+        <input type="text" id="exercise-name" name="name" class="input-field">
+      </div>
+      <div class="form-group">
+        <label for="exercise-type">Type:</label>
+        <select id="exercise-type" name="type" class="input-field">
+          <option value="Push">Push</option>
+          <option value="Pull">Pull</option>
+          <option value="Squat">Squat</option>
+          <option value="Hinge">Hinge</option>
+          <option value="Cardio">Cardio</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="muscle-target">Target Muscle Group:</label>
+        <select id="muscle-target" name="muscleTarget" class="input-field">
+          <option value="Chest">Chest</option>
+          <option value="Back">Back</option>
+          <option value="Arms">Arms</option>
+          <option value="Legs">Legs</option>
+          <option value="Shoulders">Shoulders</option>
+          <option value="Core">Core</option>
+        </select>
+      </div>
+      <input type="submit" value="Add Exercise"> 
+    </form>
+
   <p><%= errorMsg %></p>
 
 

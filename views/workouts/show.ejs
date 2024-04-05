@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>Workout Schedule</h2>
+<h2 class="scheduled">Selected Workout Options</h2>
 <table>
   <thead>
     <tr>
@@ -22,23 +22,26 @@
   </tbody>
 </table>
 
+<br />
+<div class="WOexercises">
+  <h2>Exercises:</h2>
+  <ul>
+    <%- workout.exercises.map(e => `<li>${e.name}</li>`).join('') %>
+  </ul>
 
-
-<br>
-<div class="WOexercises"><h2>Exercises:</h2>
-    <ul>
-      <%- workout.exercises.map(e => `<li>${e.name}</li>`).join('') %>
-    </ul> 
-
-  <form id="add-exercise" action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+  <form id="add-exercise"
+    action="/workouts/<%= workout._id %>?_method=PUT"
+    method="POST"
+  >
     <select name="exerciseId">
       <%- exercises.map(e => `<option value="${e._id}">${e.name}</option>`)%>
     </select>
     <button type="submit">Add to Workout</button>
   </form>
 </div>
-<br>
-<br><h2>Comments</h2>
+<br />
+<br />
+<h2>Comments</h2>
 
 <% if (workout.comments.length) { %>
 <table>
@@ -51,33 +54,34 @@
   </thread>
   <tbody>
     <% workout.comments.forEach(function(c) { %>
-      <tr>
-        <td> <%= c.createdAt.toLocaleString() %></td>
-        <td> <%= c.content %> </td>
-        <td>
-          <% if (user?._id.equals(c.user)) { %>
-            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-          <% } %>
-        </td>
-      </tr>
+    <tr>
+      <td><%= c.createdAt.toLocaleString() %></td>
+      <td><%= c.content %></td>
+      <td>
+        <% if (user?._id.equals(c.user)) { %>
+        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <% } %>
+      </td>
+    </tr>
     <% }) %>
   </tbody>
 </table>
 <% } else { %>
-  <h4>Be the first to comment on this workout</h4>
+<h4>Be the first to comment on this workout</h4>
 <% } %>
 
-
-<br><br>
+<br /><br />
 <% if (user){ %>
-  <form id="add-comment-form" method="POST"
-    action="/workouts/<%= workout._id %>/comments">
-    <label>Comment:</label><br>
-    <textarea name="content"></textarea>
-    <input type="submit" value="Add Comment">
-  </form>
-<% } %>
+<form
+  id="add-comment-form"
+  method="POST"
+  action="/workouts/<%= workout._id %>/comments"
+>
+  <label>Comment:</label><br />
+  <textarea name="content"></textarea>
+  <input type="submit" value="Add Comment" />
+</form>
 
-<%- include('../partials/footer') %>
+<% } %> <%- include('../partials/footer') %>

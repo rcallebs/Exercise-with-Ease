@@ -28,6 +28,7 @@ Registered users can comment/remove comments on a workout schedule or exercise t
 - Delete exercises that you've created
 - Create a beginner schedule that uses only body weight exercised.
 - Record your daily meals and beverages, and delve deeper into the significance of nutrition.
+- Make a phone friendly version of the app.
 
 ---
 
