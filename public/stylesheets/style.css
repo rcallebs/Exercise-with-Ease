@@ -1,10 +1,11 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: antiquewhite;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 .form-group {
@@ -14,15 +15,15 @@ a {
 
 .form-group label {
   display: inline-block;
-  width: 150px; 
+  width: 150px;
   margin-right: 10px;
 }
 
 .input-field {
-  width: 200px; 
+  width: 150px;
 }
 
-input[type="submit"] {
+input[type="submit"], button[type="submit"] {
   display: block;
   margin-top: 10px;
   padding: 5px 10px;
@@ -42,14 +43,16 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #000000;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #161313;
+  color: #f5f5f5;
 }
 
 tr:hover {
@@ -66,18 +69,23 @@ nav {
 
 .nav-link {
   color: #fff;
-  text-decoration: none;
   margin-right: 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  display: inline-block;
+  text-align: center;
 }
 
 .nav-link:hover {
-  color: #ffc107; 
+  color: #ffc107;
 }
 
 .login {
   border: 2px solid #fff;
-  padding: 8px 16px;
   border-radius: 5px;
+  padding: 10px 20px;
+  display: inline-block;
 }
 
 .login:hover {
@@ -86,14 +94,14 @@ nav {
 }
 
 .home-img {
-  width: 75%; 
-  max-width: 600px; 
-  margin: 0 auto; 
+  width: 75%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .home-img img {
-  width: 100%; /* Ensures the image takes up the full width of its container */
-  height: auto; /* Allows the image to scale proportionally */
+  width: 100%;
+  height: auto;
 }
 
 .welcome {
@@ -104,4 +112,20 @@ nav {
 .registerMssg {
   display: flex;
   justify-content: center;
+}
+
+.formFilter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.currSchedule {
+  text-align: center;
+}
+
+.reminder {
+  text-align: center;
+}
+#workoutFilter {
+  margin: 10px;
 }

@@ -44,11 +44,13 @@ const create = async (req, res) => {
 };
 
 async function filterParam(req, res) {
-  // find all exercises
+  // find all exercises stored in mongoDB
   const exercises = await Exercise.find({});
+  //hold the value of the parameter of the request
   const banana = req.params.filterParam;
+  // return exercises that have a match between param and muscleTarget object 
   const filteredList = exercises.filter((a) => banana === a.muscleTarget);
-  console.log(filteredList);
+  //render new page of only those exercises filtered for
   res.render(`exercises/index`, { exercises: filteredList });
 }
 

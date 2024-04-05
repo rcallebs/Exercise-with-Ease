@@ -1,16 +1,5 @@
 <%- include('../partials/header') %>
 
-
-
-<h2>Current Workout Schedule</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-
   <%
   // make the workout schedule display monday - sunday regardless of when a workout is added
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -19,6 +8,17 @@
     .sort((a, b) => a.dayIndex - b.dayIndex)
     .map(obj => obj.workout);
 %>
+
+<div class="currSchedule"><h2>Current Workout Schedule</h2></div>
+<table class="workoutSchedule">
+  <thead>
+    <tr>
+      <th class="day">Day</th>
+      <th class="dayDetails">Details</th>
+    </tr>
+  </thead>
+
+
 
   <tbody>
     <% sortedWorkouts.forEach(w => { %>
@@ -30,6 +30,6 @@
   </tbody>
 </table>
 
-<h3>Workout Schedule as of <%= time %></h3>
+<h3 class="reminder">Workout Schedule as of <%= time %></h3>
 
 <%- include('../partials/footer') %>

@@ -1,13 +1,20 @@
 <%- include('../partials/header') %>
 
 <h1>All Currently Listed Exercises</h1>
-<form action="/exercises/filter" method="POST">
-  <label name="dropdown"></label>
-  <select name="workoutFilter" id="workoutFilter">
-    <option value="Legs">Legs</option>
-  </select>
-  <button type="submit">Filter</button>
-</form>
+<div class="formFilter">
+  <form action="/exercises/filter" method="POST">
+    <label name="dropdown"></label>
+    <button type="submit">Filter Muscle Target</button>
+    <select name="workoutFilter" id="workoutFilter">
+      <option value="Legs">Legs</option>
+      <option value="Core">Core</option>
+      <option value="Shoulders">Shoulders</option>
+      <option value="Chest">Chest</option>
+      <option value="Back">Back</option>
+      <option value="Arms">Arms</option>
+    </select>
+  </form>
+</div>
 <table class="exerciseList">
   <thead class="excerciseHeaders">
     <tr>
